@@ -1,0 +1,13 @@
+:root {
+  --org-color: #fc6909;
+  --orw-color: #fff;
+  --hv-color: #fc6a09cd;
+  --bg-color: #000;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
