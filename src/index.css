@@ -11,3 +11,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+.app {
+  width: 100%;
+  height: 100vh;
+  background-color: #fc6909;
+  display: flex;
+}

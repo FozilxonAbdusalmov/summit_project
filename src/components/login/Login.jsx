@@ -1,14 +1,32 @@
 import { BiUser } from "react-icons/bi";
 import { TbPasswordUser } from "react-icons/tb";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [usernameFocused, setUsernameFocused] = useState(false);
   const [usernameValue, setUsernameValue] = useState("");
   const [userpassFocused, setUserpassFocused] = useState(false);
   const [userpassValue, setUserpassValue] = useState("");
   const [activeTab, setActiveTab] = useState("Admin");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("isAuthenticated") === "true") {
+      navigate("/");
+    }
+  }, [navigate]);
+
+  const handleLogin = () => {
+    if (usernameValue === "admin" && userpassValue === "1234") {
+      localStorage.setItem("isAuthenticated", "true");
+      setIsAuthenticated(true); // 🔹 Holatni yangilash
+      navigate("/");
+    } else {
+      alert("Login yoki parol noto‘g‘ri!");
+    }
+  };
 
   return (
     <div className="admin">
@@ -20,7 +38,7 @@ function Login() {
           <h1>Welcome Back</h1>
           <p>Welcome Back, SUMMIT</p>
         </div>
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <div className="admin_m_or_ad">
             <span
               className="btn"
@@ -84,7 +102,12 @@ function Login() {
             </div>
           </div>
 
-          <input type="button" value="Sign in" className="sign_btn" />
+          <input
+            type="button"
+            value="Sign in"
+            className="sign_btn"
+            onClick={handleLogin}
+          />
           <a href="#" className="f_password">
             Forgot Password?
           </a>
