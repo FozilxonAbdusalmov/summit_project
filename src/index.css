@@ -12,8 +12,30 @@
   font-family: sans-serif;
 }
 .app {
-  width: 100%;
-  height: 100vh;
-  background-color: #fc6909;
+  width: 100vw;
+  height: calc(100vh - 115px);
   display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Scrollbar umumiy uslubi */
+::-webkit-scrollbar {
+  width: 8px; /* Scrollning eni */
+}
+
+/* Scroll track (orqa fon) */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Scroll tugmasi (thumb) */
+::-webkit-scrollbar-thumb {
+  background: var(--hv-color); /* Scroll rangi */
+  border-radius: 10px;
+}
+
+/* Hover effekti */
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
 }

@@ -30,7 +30,7 @@ function Login({ setIsAuthenticated }) {
 
   return (
     <div className="admin">
-      <h1 className="icon">
+      <h1 className="logo">
         SUMM<span>IT</span>
       </h1>
       <div className="admin_container">

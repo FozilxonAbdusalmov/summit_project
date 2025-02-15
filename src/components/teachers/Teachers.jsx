@@ -1,7 +1,7 @@
 import "./Teachers.css";
 
 function Teachers() {
-  return <div>Teachers</div>;
+  return <div className="teachers">Teachers</div>;
 }
 
 export default Teachers;

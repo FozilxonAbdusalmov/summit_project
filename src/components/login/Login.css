@@ -8,14 +8,14 @@
   gap: 30px;
 }
 
-.admin > .icon {
+.logo {
   font-size: 35px;
   color: var(--bg-color);
   font-weight: 800;
   letter-spacing: 1px;
 }
 
-.admin > .icon > span {
+.logo > span {
   color: var(--org-color);
 }
 

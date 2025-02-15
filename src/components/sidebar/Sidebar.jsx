@@ -13,7 +13,7 @@ import "./Sidebar.css";
 
 const Sidebar = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user") || "{}"); // ❗ Xatolik chiqmasligi uchun default qiymat berildi
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
@@ -24,7 +24,7 @@ const Sidebar = ({ setIsAuthenticated }) => {
 
   const menuItems = [
     {
-      path: "/",
+      path: "/dashboard",
       label: "Dashboard",
       icon: <FaTachometerAlt className="icon" />,
     },
@@ -49,24 +49,37 @@ const Sidebar = ({ setIsAuthenticated }) => {
 
   return (
     <div className="sidebar">
-      <h2 className="logo">SUMMIT</h2>
-      {user.name && <p className="user-info">Welcome, {user.name}</p>}{" "}
-      <nav>
+      <div className="sidebar_header">
+        <h1 className="logo">
+          SUMM<span>IT</span>
+        </h1>
+      </div>
+
+      {user.name && <p className="user-info">Welcome, {user.name}</p>}
+
+      <div className="sidebar_main">
         {menuItems.map(({ path, label, icon }) => (
           <NavLink
             key={path}
             to={path}
             className={({ isActive }) =>
-              isActive ? "nav-link active" : "nav-link"
+              isActive ? "sidebar_main_items_active" : "sidebar_main_items"
             }
           >
             {icon} {label}
           </NavLink>
         ))}
+      </div>
+      <div className="logut_div">
+        <img
+          src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg"
+          alt="img_person"
+        />
+        <p>Fozilxon</p>
         <button type="button" className="logout-btn" onClick={handleLogout}>
-          <FaSignOutAlt className="icon" /> Logout
+          <FaSignOutAlt className="icon_exit" />
         </button>
-      </nav>
+      </div>
     </div>
   );
 };

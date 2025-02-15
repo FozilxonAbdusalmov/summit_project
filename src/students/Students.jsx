@@ -1,9 +1,7 @@
-import './Students.css'
+import "./Students.css";
 
 function Students() {
-  return (
-    <div>Students</div>
-  )
+  return <div className="students">Students</div>;
 }
 
-export default Students
+export default Students;

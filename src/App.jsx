@@ -12,6 +12,8 @@ import Group from "./components/group/Group";
 import Teachers from "./components/teachers/Teachers";
 import CoinList from "./components/coinList/CoinList";
 import Login from "./components/login/Login";
+import Footer from "./components/footer/Footer";
+import Students from "./students/Students";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -33,14 +35,20 @@ function App() {
                 !isAuthenticated ? (
                   <Login setIsAuthenticated={setIsAuthenticated} />
                 ) : (
-                  <Navigate to="/" />
+                  <Navigate to="/dashboard" />
                 )
               }
             />
             <Route
-              path="/"
+              path="/dashboard"
               element={
                 isAuthenticated ? <Dashboard /> : <Navigate to="/login" />
+              }
+            />
+            <Route
+              path="/students"
+              element={
+                isAuthenticated ? <Students /> : <Navigate to="/login" />
               }
             />
             <Route
@@ -68,6 +76,8 @@ function App() {
           </Routes>
         </div>
       </div>
+
+      {isAuthenticated ? <Footer /> : ""}
     </Router>
   );
 }

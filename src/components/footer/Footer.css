@@ -1,0 +1,58 @@
+.footer {
+  width: 100vw;
+  height: 115px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  border-top: 1px solid rgba(215, 215, 215, 1);
+}
+
+.footer_sup {
+  display: flex;
+  gap: 30px;
+  line-height: 1.5;
+}
+
+.footer_sup > div p {
+  color: rgba(174, 174, 174, 1);
+  font-size: 16px;
+}
+.footer_sup > div a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.footer_t {
+  text-align: right;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.footer_t > p {
+  font-size: 14px;
+  color: rgba(174, 174, 174, 1);
+}
+
+.footer_t > div {
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.footer_t > div > a {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.footer_t > div > a > svg {
+  font-size: 17px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.2);
+}

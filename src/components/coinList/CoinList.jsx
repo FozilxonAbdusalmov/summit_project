@@ -1,7 +1,7 @@
 import "./CoinList.css";
 
 function CoinList() {
-  return <div>CoinList</div>;
+  return <div className="coinlist">CoinList</div>;
 }
 
 export default CoinList;
